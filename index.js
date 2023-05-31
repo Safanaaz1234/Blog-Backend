@@ -5,6 +5,7 @@ const Blog = require("./model/db");
 const cors = require("cors");
 app.use(cors());
 require("dotenv").config();
+const PORT = process.env.PORT || 4000;
 
 app.get("/api/getSingleBlog/:id", async (req, res) => {
   try {
@@ -65,6 +66,6 @@ app.patch("/api/updateBlog/:id", async (req, res) => {
   }
 });
 
-app.listen(4000, () => {
-  console.log("listening 4000");
+app.listen(PORT, () => {
+  console.log(`listening ${PORT}`);
 });
