@@ -7,6 +7,14 @@ app.use(cors());
 require("dotenv").config();
 const PORT = process.env.PORT || 4000;
 
+
+
+
+app.get("/",(req,res)=>{
+    res.setHeader("Accrss-Control-Allow-Credentials","true");
+    res.send("API is running")
+});
+
 app.get("/api/getSingleBlog/:id", async (req, res) => {
   try {
     const id = req.params.id;
